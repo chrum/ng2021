@@ -1,31 +1,43 @@
-const products = [
+export enum ProductType {
+    FRUIT = 'fruit',
+    SWEETS = 'sweets',
+    ALCOHOL = 'alcohol'
+}
+
+export interface Product {
+    type: ProductType | string;
+    name: string;
+    qty: number;
+}
+
+export const products = [
     {
-        type: 'fruit',
+        type: ProductType.FRUIT,
         name: 'Apples',
         qty: 5
     },
     {
-        type: 'fruit',
+        type: ProductType.FRUIT,
         name: 'Bananas',
         qty: 2
     },
     {
-        type: 'sweet',
+        type: ProductType.SWEETS,
         name: 'Candies',
         qty: 1
     },
     {
-        type: 'sweets',
+        type: ProductType.SWEETS,
         name: 'Gingerbead',
         qty: 10
     },
     {
-        type: 'sweets',
+        type: ProductType.ALCOHOL,
         name: 'Tequila',
         qty: 9
     },
     {
-        type: 'sweets',
+        type: ProductType.ALCOHOL,
         name: 'Tequila',
         qty: 9
     },

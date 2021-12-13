@@ -11,6 +11,10 @@
  * - fix some small errors, typos and etc... maybe use TypeScript for that
  *
  */
+import {Supermarket} from "./supermarket";
+import {products} from "./products";
 
 
-
+const supermarket = new Supermarket();
+supermarket.addSupplies(products);
+supermarket.advertise();

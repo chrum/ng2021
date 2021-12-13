@@ -14,22 +14,27 @@
 ---
 
 ## Project
+
+Emoji coded:  
+:pray: - required (3,4)  
+:rocket: - extra points (5)
+
 Requirements:
-- app should consist of 2+ pages (DONT USE ROUTING FOR THAT :smiling_imp: as we dont know routing yet)
-- use ngModel to build form with validators
-- form should be user friendly: display errors and block buttons
-- pass collected data between pages/components
-- register user interactions and their timing (or any other data than be use as list)
-- display list - filterable and sortable (pipes)
+- :pray: app should consist of 2+ pages (DONT USE ROUTING FOR THAT :smiling_imp: as we dont know routing yet)
+- :pray: use ngModel to build form with validators
+- :pray: form should be user friendly: display errors and block buttons
+- :pray: components communication (inputs, outputs): pass collected data between pages/components
+- :rocket: register user interactions and their timing (or any other data than can be use as list)
+- :rocket: display list - filterable and sortable (pipes)
 
 
 ### Example project
-Two pages
+:pray: Two pages
 - Intro page with intro text and player form
 - Game page
 
 ### Intro page specification
-
+**:pray: basic version**
 - some quick introductory text
 - form with two inputs
     - player name
@@ -39,7 +44,7 @@ Two pages
 - if name and email are fine then store this data and move to the game page
 
 ### Game page specification
-**basic version**
+**:pray: basic version**
 - there should be a button 'exit game' which will move player to intro page
 - there should be nice, personalized welcome message (with player name)
 - integrate [ngx-tetris](https://www.npmjs.com/package/ngx-tetris) or [ngx-snake](https://www.npmjs.com/package/ngx-snake)
