@@ -1,0 +1,16 @@
+
+<h3>Peaople in the room</h3>
+<p>Max number: {{maxPersonsInRoom}} </p>
+<p>Current number:{{ this.personList.length}} </p>
+
+<input type="text" [(ngModel)]="name" placeholder="name"/>
+<button (click)="addPerson()" >Add</button>
+
+
+<h4>Currently in  the room </h4>
+<button (click)="clearList()">clear</button>
+
+
+<div *ngFor="let person of personList;let idx=index">
+ {{idx+1}}. {{person.personName}}<button (click)="removePerson(idx)">x</button>
+</div>
