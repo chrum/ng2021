@@ -1,0 +1,21 @@
+<h3> People in the room </h3>
+<p>Max number: {{maxPeople}}</p>
+<p [class]="colorClass">
+    Current number: {{currentPeople}}</p>
+
+<input [(ngModel)]="name3" (keydown.enter)="addPerson()"/>
+<select [(ngModel)]="chosenWorkspace">
+    <option *ngFor="let opt of workspaces"
+            [value]="opt">{{ opt }}
+    </option>
+</select>
+<button (click)="addPerson()">Add</button>
+<h4>Currently in the room:</h4>
+<button (click)="clearPersonList()">Clear</button>
+<ol>
+    <li *ngFor="let item of personList; let i = index">
+        {{ item.name }} - likes {{ item.workspace }}.
+        <button (click)="removePersonAtIndex(i)"> X</button>
+        <button (click)="editPersonAtIndex(i)">Edit</button>
+    </li>
+</ol>
