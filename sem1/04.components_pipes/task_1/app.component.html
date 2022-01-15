@@ -1,0 +1,11 @@
+<h3>Who are you?</h3>
+
+<app-person-form (fullnameChange)="onFormChanged($event)"></app-person-form>
+<hr/>
+
+<div *ngIf="fullname">
+
+  Actions<br/>
+  <button (click)="welcome()" >Welcome</button>
+  <button (click)="byebye()" >ByeBye</button>
+</div>
