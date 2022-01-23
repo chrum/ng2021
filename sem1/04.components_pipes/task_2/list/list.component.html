@@ -1,0 +1,6 @@
+<ol>
+  <li *ngFor="let item of personList; let i = index">
+    {{ item.name }} - likes {{ item.workspace }}.
+    <button (click)="delete(i)"> X</button>
+  </li>
+</ol>

@@ -1,0 +1,16 @@
+<h3> People in the room </h3>
+<p>Max number: {{maxPeople}}</p>
+<p [class]="colorClass">
+  Current number: {{currentPeople}}</p>
+
+<app-person-form (addPerson)="addPerson($event)"></app-person-form>
+
+
+
+<h4>Currently in the room:</h4>
+<button (click)="clearPersonList()">Clear</button>
+
+<app-list
+  [personList]="personList"
+  (removeAtIndex)="removePersonAtIndex($event)"
+></app-list>
