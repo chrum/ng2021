@@ -1,0 +1,13 @@
+<select [(ngModel)]="selectedWorkspace">
+  <option value="All">Show All</option>
+
+  <option *ngFor="let item of availableWorkspaces"
+    [value]="item">{{ item }}</option>
+</select>
+
+<ol>
+  <li *ngFor="let item of personList | filter:selectedWorkspace:personList.length; let i = index">
+    {{ item.name }} - likes {{ item.workspace }}.
+    <button (click)="removePersonAtIndex($event, i)"> X</button>
+  </li>
+</ol>

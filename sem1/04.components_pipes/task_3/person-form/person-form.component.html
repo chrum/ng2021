@@ -1,0 +1,7 @@
+<input [(ngModel)]="name3" (keydown.enter)="addPerson()"/>
+<select [(ngModel)]="chosenWorkspace">
+  <option *ngFor="let opt of workspaces"
+          [value]="opt">{{ opt }}
+  </option>
+</select>
+<button (click)="addPerson()">Add</button>
