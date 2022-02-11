@@ -14,6 +14,9 @@
 ### 4. Components communication, pipes
 [presentation](https://edu.chrum.it/ng2021/lecture_4.html) | [pdf](https://edu.chrum.it/ng2021/pdfs/Angular_developer.lecture_4.pdf)
 
+### 5. Basic forms, template reference variables
+[presentation](https://edu.chrum.it/ng2021/lecture_5.html) | [pdf](https://edu.chrum.it/ng2021/pdfs/Angular_developer.lecture_5.pdf) | [example](https://stackblitz.com/edit/angular-age-verification-form)
+
 ---
 
 ## **Exam questions**
