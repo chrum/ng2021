@@ -1,0 +1,38 @@
+<div *ngIf="products">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-3 ">
+      <label class="form-label">Sort by</label>
+      <select class="form-select" [(ngModel)]="sortDirection">
+        <option value="asc">Cheap first</option>
+        <option value="desc">Expensive first</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row pt-5">
+    <div class="card m-1 text-center" style="width: 13rem;"
+         *ngFor="let product of products | sort:'price':sortDirection">
+      <img src="https://place-hold.it/300x200?fontsize=30&text={{ product.name | uppercase | slice:0:1 }}" class="card-img-top">
+      <div class="card-body">
+        <h3 class="card-title">{{ product.name }}</h3>
+        <h5 class="card-title">{{ product.price | currency:'USD' }}</h5>
+      </div>
+      <div class="card-footer text-muted">
+        <button (click)="addToCart(product)">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+
+  <div *ngIf="!products?.length" class="align-middle row p-5 m-5">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <p class="card-text">Select category on the left to see some products</p>
+      </div>
+    </div>
+  </div>
