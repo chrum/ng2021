@@ -1,6 +1,7 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormGroup, NgModel} from '@angular/forms';
-import {OutletContext} from '@angular/router';
+import {Router} from "@angular/router";
+import {CustomerService} from "../customer.service";
 
 @Component({
   selector: 'app-age-verification',
@@ -11,7 +12,10 @@ export class AgeVerificationComponent {
   public years: Array<number> = [];
   private _currentYear = new Date().getFullYear();
 
-  public constructor() {
+  public constructor(
+    private _router: Router,
+    private _customerService: CustomerService
+  ) {
     const minYear = this._currentYear - 100;
     for (let year = this._currentYear; year >= minYear; year--) {
       this.years.push(year);
@@ -35,6 +39,8 @@ export class AgeVerificationComponent {
     }
 
     alert('Success, access granted!');
+    this._customerService.setAge(age);
+    this._router.navigate(['/shop']);
   }
 
 }
