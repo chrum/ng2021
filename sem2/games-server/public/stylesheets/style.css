@@ -1,0 +1,36 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  text-transform: capitalize;
+}
+
+body.tetris {
+  background-image: url("/images/tetris.jpg");
+  color: #e3e2e2;
+}
+
+body.snake {
+  background-image: url("/images/snake.png");
+  color: #e3e2e2;
+  background-position: 50% 75%;
+  background-repeat: no-repeat;
+  background-color: #4b4949;
+}
+
+tr {
+  background-color: #ffffff8f;
+  color: #2f2c2c;
+  text-shadow: 4px 4px 6px rgb(90 66 66);
+}
+
+
+td:first-child, th:first-child {
+  padding: 1.2rem 1.5rem;
+}
+
+a {
+  color: #00B7FF;
+}

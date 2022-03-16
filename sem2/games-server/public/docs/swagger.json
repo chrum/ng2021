@@ -1,0 +1,212 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "Tetris Swagger docs"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "security": [
+    {
+      "AuthToken": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "auth",
+      "description": "Auth token validation endpoint"
+    },
+    {
+      "name": "scores",
+      "description": "Highscores endpoint"
+    }
+  ],
+  "paths": {
+    "/check-token": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "summary": "Verifies auth token",
+        "description": "Endpoint for auth token verification",
+        "requestBody": {
+          "description": "Submit new score entry",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthTokenRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthTokenResponse"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/scores/{game}": {
+      "get": {
+        "tags": [
+          "scores"
+        ],
+        "summary": "Renders best players list",
+        "description": "",
+        "parameters": [
+          {
+            "name": "game",
+            "in": "path",
+            "description": "ID of the game",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "tetris",
+                "snake"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ScoresListItem"
+                  }
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": []
+      }
+    },
+    "/scores": {
+      "post": {
+        "tags": [
+          "scores"
+        ],
+        "summary": "Stores score entry",
+        "description": "",
+        "operationId": "createScore",
+        "requestBody": {
+          "description": "Submit new score entry",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Score"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ScoresListItem"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Unauthorized"
+          },
+          "422": {
+            "description": "Incomplete data"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AuthTokenRequest": {
+        "type": "object",
+        "properties": {
+          "auth-token": {
+            "type": "string",
+            "example": "someToken"
+          }
+        }
+      },
+      "AuthTokenResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Score": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "game": {
+            "type": "string",
+            "enum": [
+              "tetris",
+              "snake"
+            ]
+          },
+          "score": {
+            "type": "integer"
+          }
+        }
+      },
+      "ScoresListItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "score": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "AuthToken": {
+        "type": "apiKey",
+        "name": "auth-token",
+        "in": "header"
+      }
+    }
+  }
+}
