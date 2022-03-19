@@ -22,7 +22,10 @@ export class ShopComponent {
     if (!this._customerService.isOfAge) {
       this._router.navigate(['/age-verification']);
     }
-    this.allCategories = this._productsService.getCategories();
+    this._productsService.getCategories()
+      .subscribe((data) => {
+        this.allCategories = data;
+      })
   }
 
   public onCategorySelected(category: Category): void {
