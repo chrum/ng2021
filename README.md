@@ -37,8 +37,19 @@ But only from the group below :angel:
 more to come...
 
 ## Project
-- TBD
----
+Emoji coded:  
+:pray: - required (3,4)  
+:rocket: - extra points (5)
+
+1. Routing
+    - :pray: Two pages (intro, game page) -  [details](https://edu.chrum.it/ng2021/lecture_6.html#/0/2)
+    - :rocket: Smart componentization - discussable, no pressure, [heres some inspiration](https://edu.chrum.it/ng2021/lecture_6.html#/0/2)
+2. Services
+    - :pray: storing and reading data - [details](https://edu.chrum.it/ng2021/lecture_6.html#/0/3)
+3. Http
+    - :pray: reading and displaying highscores - [details](https://edu.chrum.it/ng2021/lecture_7.html#/0/3)
+    - :rocket: token verification [details](https://edu.chrum.it/ng2021/lecture_7.html#/0/4)
+    - :rocket: posting scores, my scores [details](https://edu.chrum.it/ng2021/lecture_7.html#/0/5)
   
 ## Authors
 
