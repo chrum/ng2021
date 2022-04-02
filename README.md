@@ -25,6 +25,10 @@
 | [hooks example](https://stackblitz.com/edit/angular-sum-lifecycle-hooks)
 | [http example](https://stackblitz.com/edit/angular-http-requests-example)
 
+### 8. RxJS
+[presentation](https://edu.chrum.it/ng2021/lecture_8.html) | [pdf](https://edu.chrum.it/ng2021/pdfs/Angular_developer.lecture_8.pdf)
+| [example](https://stackblitz.com/edit/angular-rxjs-intro)
+
 ---
 
 ## **Exam questions**
