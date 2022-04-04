@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Category, Product} from "../definitions";
+import {Category, CategoryWithProducts, Product} from "../definitions";
 import {ProductsService} from "../products.service";
 import {CustomerService} from "../customer.service";
 import {Router} from "@angular/router";
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./shop.component.scss']
 })
 export class ShopComponent {
-  public allCategories: Array<Category> = [];
+  public allCategories$ = this._productsService.categoriesWithProducts$;
   public productsToDisplay: Array<Product> = [];
   public productsInCart: Array<Product> = [];
 
@@ -22,13 +22,9 @@ export class ShopComponent {
     if (!this._customerService.isOfAge) {
       this._router.navigate(['/age-verification']);
     }
-    this._productsService.getCategories()
-      .subscribe((data) => {
-        this.allCategories = data;
-      })
   }
 
-  public onCategorySelected(category: Category): void {
+  public onCategorySelected(category: CategoryWithProducts): void {
     this.productsToDisplay = category.products;
   }
 

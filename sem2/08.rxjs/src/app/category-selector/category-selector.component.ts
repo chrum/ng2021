@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { Category } from "../definitions";
+import {Category, CategoryWithProducts} from "../definitions";
 
 @Component({
   selector: "app-category-selector",
@@ -7,10 +7,10 @@ import { Category } from "../definitions";
   styleUrls: ["./category-selector.component.scss"]
 })
 export class CategorySelectorComponent {
-  @Input() public categories: Array<Category> = [];
-  @Output() public selected = new EventEmitter<Category>();
+  @Input() public categories: Array<CategoryWithProducts> = [];
+  @Output() public selected = new EventEmitter<CategoryWithProducts>();
 
-  public onCategoryClicked(category: Category): void {
+  public onCategoryClicked(category: CategoryWithProducts): void {
     this.selected.emit(category);
   }
 }
