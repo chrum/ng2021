@@ -7,9 +7,9 @@ const availableGames = ['tetris', 'snake'];
 
 function scoresPage(req, res, next, game) {
     const isAdmin = req.query.auth && req.query.auth === 'chrystian';
-    const responseType = req.get('accept').toLowerCase();
+    const responseType = req.get('accept');
 
-    if (responseType === 'application/json') {
+    if (responseType && responseType.toLowerCase() === 'application/json') {
         if (!game || availableGames.indexOf(game) === -1) {
             res.status(422);
             res.send({
