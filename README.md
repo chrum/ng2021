@@ -29,6 +29,11 @@
 [presentation](https://edu.chrum.it/ng2021/lecture_8.html) | [pdf](https://edu.chrum.it/ng2021/pdfs/Angular_developer.lecture_8.pdf)
 | [example](https://stackblitz.com/edit/angular-rxjs-intro)
 
+### 9. Advanced Routing - params, nesting, guards
+[presentation](https://edu.chrum.it/ng2021/lecture_9.html) | [pdf](https://edu.chrum.it/ng2021/pdfs/Angular_developer.lecture_9.pdf)
+| [example](https://stackblitz.com/edit/advanced-routing)
+
+
 ---
 
 ## **Exam questions**
@@ -52,8 +57,11 @@ Emoji coded:
     - :pray: storing and reading data - [details](https://edu.chrum.it/ng2021/lecture_6.html#/0/3)
 3. Http
     - :pray: reading and displaying highscores - [details](https://edu.chrum.it/ng2021/lecture_7.html#/0/3)
-    - :rocket: token verification [details](https://edu.chrum.it/ng2021/lecture_7.html#/0/4)
-    - :rocket: posting scores, my scores [details](https://edu.chrum.it/ng2021/lecture_7.html#/0/5)
+    - :rocket: token verification - [details](https://edu.chrum.it/ng2021/lecture_7.html#/0/4)
+    - :rocket: posting scores, my scores - [details](https://edu.chrum.it/ng2021/lecture_7.html#/0/5)
+4. Routing params
+   - :pray: Add high contrast mode controlled by route param - [details](https://edu.chrum.it/ng2021/lecture_9.html#/0/5)
+   - :rocket::rocket: Guarding game route - [details](https://edu.chrum.it/ng2021/lecture_9.html#/0/6)
   
 ## Authors
 
