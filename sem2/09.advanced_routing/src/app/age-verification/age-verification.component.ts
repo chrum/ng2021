@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {FormGroup, NgModel} from '@angular/forms';
 import {Router} from "@angular/router";
 import {CustomerService} from "../customer.service";
+import {ProductsService} from "../products.service";
 
 @Component({
   selector: 'app-age-verification',
@@ -9,12 +10,15 @@ import {CustomerService} from "../customer.service";
   styleUrls: ['./age-verification.component.scss']
 })
 export class AgeVerificationComponent {
+  public categories$ = this._productsService.categories$;
+
   public years: Array<number> = [];
   private _currentYear = new Date().getFullYear();
 
   public constructor(
     private _router: Router,
-    private _customerService: CustomerService
+    private _customerService: CustomerService,
+    private _productsService: ProductsService
   ) {
     const minYear = this._currentYear - 100;
     for (let year = this._currentYear; year >= minYear; year--) {
@@ -23,9 +27,7 @@ export class AgeVerificationComponent {
   }
 
   public verify(form: FormGroup, ageElelemnt: HTMLElement, yearElement: HTMLElement, ageModel: NgModel, yearModel: NgModel): void {
-    console.log(form);
-    console.log(ageElelemnt, ageModel);
-    console.log(yearElement, yearModel);
+    const categoryId = form.value.categoryId;
 
     const age = form.value.age;
     if (age < 18) {
@@ -40,7 +42,8 @@ export class AgeVerificationComponent {
 
     alert('Success, access granted!');
     this._customerService.setAge(age);
-    this._router.navigate(['/shop']);
+
+    this._router.navigate(['/shop', categoryId]);
   }
 
 }

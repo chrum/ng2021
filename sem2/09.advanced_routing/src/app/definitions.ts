@@ -10,6 +10,7 @@ export interface Category {
 }
 
 export interface CategoryWithProducts {
+  id: number;
   name: string;
   products: Array<Product>;
 }

@@ -9,16 +9,16 @@ import {delay, forkJoin, map} from "rxjs";
 export class ProductsService {
 
   private _products$ = this._http.get<Array<Product>>('https://edu.chrum.it/data/clean_products.json');
-  private _categories$ = this._http.get<Array<Category>>('https://edu.chrum.it/data/categories.json');
+  public categories$ = this._http.get<Array<Category>>('https://edu.chrum.it/data/categories.json');
 
   public categoriesWithProducts$ = forkJoin([
     this._products$,
-    this._categories$
+    this.categories$
   ]).pipe(
     map(([products, categories]) => {
       return this._mergeCategoriesWithProducts(products, categories);
     }),
-    delay(2000)
+    delay(500)
   );
 
   constructor(private _http: HttpClient) { }
@@ -33,6 +33,7 @@ export class ProductsService {
         .filter((p) => p.category === category.id);
 
       categoriesWithProducts.push({
+        id: category.id,
         name: category.name,
         products: productsFromCategory
       })

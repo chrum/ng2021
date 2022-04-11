@@ -33,6 +33,24 @@
         <p *ngIf="yearModel.touched && !yearModel.valid">This is required</p>
         <!-- <p>Year errors: {{ yearModel.errors | json }}</p> -->
       </div>
+
+      <div class="mb-3">
+        <label class="form-label">Favorite catergory</label>
+        <select
+          class="form-control"
+          name="categoryId"
+          ngModel
+          required
+        >
+          <option *ngFor="let category of categories$ | async"
+                  [value]="category.id">
+            {{ category.name }}
+          </option>
+        </select>
+        <p *ngIf="yearModel.touched && !yearModel.valid">This is required</p>
+        <!-- <p>Year errors: {{ yearModel.errors | json }}</p> -->
+      </div>
+
     </div>
 
     <div class="card-footer text-muted">

@@ -10,6 +10,7 @@ import { SortPipe } from './sort.pipe';
 import {RouterModule} from "@angular/router";
 import { ShopComponent } from './shop/shop.component';
 import {HttpClientModule} from "@angular/common/http";
+import {ShopGuardGuard} from "./shop-guard.guard";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {HttpClientModule} from "@angular/common/http";
     FormsModule,
     RouterModule.forRoot([
       { path: 'age-verification', component: AgeVerificationComponent },
-      { path: 'shop', component: ShopComponent },
+      { path: 'shop/:categoryId', component: ShopComponent, canActivate: [ShopGuardGuard] },
+      { path: 'shop', component: ShopComponent, canActivate: [ShopGuardGuard]  },
       { path: '**', redirectTo: '/age-verification' }
     ]),
     HttpClientModule
