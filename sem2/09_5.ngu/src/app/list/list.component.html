@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let item of data">
+    <ng-container
+      *ngTemplateOutlet="itemTemplate || defaultItemTemplate; context: { $implicit: item }">
+    </ng-container>
+  </li>
+</ul>
+
+<ng-template #defaultItemTemplate let-item>
+  {{ item.name }}: {{ item.price | currency }}
+</ng-template>

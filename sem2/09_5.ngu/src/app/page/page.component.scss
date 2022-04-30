@@ -1,0 +1,17 @@
+
+
+:host {
+  display: block;
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid black;
+
+}
+
+.dark {
+  :host {
+    border: 2px solid white;
+    color: white;
+
+  }
+}
