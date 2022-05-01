@@ -13,7 +13,7 @@ import {PageComponent} from "./page/page.component";
     PageComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule
   ],
   providers: [],

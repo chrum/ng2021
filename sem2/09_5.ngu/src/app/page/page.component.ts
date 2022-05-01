@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit, Renderer2} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-page',
@@ -14,12 +15,16 @@ export class PageComponent implements OnInit {
     { name: 'Milk', price: 3 },
   ]
 
-  constructor(private _route: ActivatedRoute) {
+  constructor(
+    private _route: ActivatedRoute,
+    private _renderer: Renderer2,
+    @Inject(DOCUMENT) private _document: Document
+    ) {
   }
 
   public ngOnInit() {
     if (this._route.snapshot.params.dark) {
-      document.body.className = 'dark';
+      this._renderer.addClass(this._document.body, 'dark');
     }
   }
 
