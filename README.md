@@ -33,6 +33,10 @@
 [presentation](https://edu.chrum.it/ng2021/lecture_9.html) | [pdf](https://edu.chrum.it/ng2021/pdfs/Angular_developer.lecture_9.pdf)
 | [example](https://stackblitz.com/edit/advanced-routing)
 
+### 10. Reactive forms
+[presentation](https://edu.chrum.it/ng2021/lecture_10.html) | [pdf](https://edu.chrum.it/ng2021/pdfs/Angular_developer.lecture_10.pdf)
+| [example](https://stackblitz.com/edit/ng-dev-reactive-forms)
+
 
 ---
 
