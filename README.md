@@ -45,7 +45,7 @@
 There will be [questions](https://github.com/sudheerj/angular-interview-questions) :smiling_imp:  
 But only from the group below :angel:
 ```
-5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 21, 22, 24, 25, 26, 27, 28, 29, 30, 60, 62, 79
+5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 21, 22, 24, 25, 26, 27, 28, 29, 30, 36, 41, 60, 62, 63, 66, 67, 71, 72, 73, 79, 256, 258, 259
 ```
 more to come...
 
@@ -66,6 +66,8 @@ Emoji coded:
 4. Routing params
    - :pray: Add high contrast mode controlled by route param - [details](https://edu.chrum.it/ng2021/lecture_9.html#/0/5)
    - :rocket::rocket: Guarding game route - [details](https://edu.chrum.it/ng2021/lecture_9.html#/0/6)
+5. Reactive forms
+   - :pray: Convert from on intro page to reactive forms [details](https://edu.chrum.it/ng2021/lecture_10.html#/0/4)
   
 ## Authors
 
