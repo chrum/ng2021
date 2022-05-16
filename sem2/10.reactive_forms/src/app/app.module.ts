@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AgeVerificationComponent } from './age-verification/age-verification.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CategorySelectorComponent } from './category-selector/category-selector.component';
 import { ProductsListComponent } from './products-list/products-list.component';
 import { SortPipe } from './sort.pipe';
@@ -30,7 +30,8 @@ import {ShopGuardGuard} from "./shop-guard.guard";
       { path: 'shop', component: ShopComponent, canActivate: [ShopGuardGuard]  },
       { path: '**', redirectTo: '/age-verification' }
     ]),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

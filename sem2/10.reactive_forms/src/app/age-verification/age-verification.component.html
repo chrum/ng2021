@@ -1,5 +1,5 @@
 <div class="card" style="width: 18rem;">
-  <form #ageForm="ngForm" (submit)="verify(ageForm.form, ageElelemnt, yearElement, ageModel, yearModel)">
+  <form [formGroup]="ageForm" (submit)="verify()">
     <div class="card-body">
       <h5 class="card-text">Age verification</h5>
       <div class="mb-3">
@@ -8,12 +8,9 @@
           type="number"
           name="age"
           class="form-control"
-          #ageElelemnt
-          #ageModel="ngModel"
-          ngModel
-          required
+          [formControlName]="ageControlName"
         />
-        <p *ngIf="ageModel.touched && !ageModel.valid">This is required</p>
+        <p *ngIf="ageGetter.touched && !ageGetter.valid">This is required</p>
       </div>
 
       <div class="mb-3">
@@ -21,16 +18,13 @@
         <select
           class="form-control"
           name="year"
-          #yearElement
-          #yearModel="ngModel"
-          ngModel
-          required
+          formControlName="year"
         >
           <option *ngFor="let year of years" [value]="year">
             {{ year }}
           </option>
         </select>
-        <p *ngIf="yearModel.touched && !yearModel.valid">This is required</p>
+        <p *ngIf="year.touched && !year.valid">This is required</p>
         <!-- <p>Year errors: {{ yearModel.errors | json }}</p> -->
       </div>
 
@@ -39,15 +33,13 @@
         <select
           class="form-control"
           name="categoryId"
-          ngModel
-          required
+          formControlName="categoryId"
         >
           <option *ngFor="let category of categories$ | async"
                   [value]="category.id">
             {{ category.name }}
           </option>
         </select>
-        <p *ngIf="yearModel.touched && !yearModel.valid">This is required</p>
         <!-- <p>Year errors: {{ yearModel.errors | json }}</p> -->
       </div>
 
