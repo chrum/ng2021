@@ -1,0 +1,29 @@
+<div *ngIf="products">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-3 ">
+      <label class="form-label">Sort by</label>
+      <select class="form-select" [(ngModel)]="sortDirection">
+        <option value="asc">Cheap first</option>
+        <option value="desc">Expensive first</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row pt-5">
+
+    <app-product *ngFor="let product of products | sort:'price':sortDirection"
+                 [data]="product"
+                 (addToCart)="addToCart($event)"></app-product>
+  </div>
+</div>
+<div>
+
+  <div *ngIf="!products?.length" class="align-middle row p-5 m-5">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <p class="card-text">Select category on the left to see some products</p>
+      </div>
+    </div>
+  </div>

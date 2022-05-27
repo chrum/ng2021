@@ -1,0 +1,12 @@
+<div class="card m-1 text-center" style="width: 13rem;">
+  <img src="https://place-hold.it/300x200?fontsize=30&text={{ data.name | uppercase | slice:0:1 }}" class="card-img-top">
+  <div class="card-body">
+    <h3 class="card-title">{{ data.name }}</h3>
+    <h5 class="card-title">{{ data.price | currency:'USD' }}</h5>
+  </div>
+  <div class="card-footer text-muted">
+    <button (click)="toCart()">
+      Add to cart
+    </button>
+  </div>
+</div>

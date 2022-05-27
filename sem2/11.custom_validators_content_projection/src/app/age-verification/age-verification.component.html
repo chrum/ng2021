@@ -1,0 +1,56 @@
+<div class="card" style="width: 18rem;">
+  <form [formGroup]="ageForm" (submit)="verify()">
+    <div class="card-body">
+      <h5 class="card-text">Age verification</h5>
+      <div class="mb-3">
+        <label class="form-label">How old are you?</label>
+        <input
+          type="number"
+          name="age"
+          class="form-control"
+          [formControlName]="ageControlName"
+        />
+        <p *ngIf="ageGetter.touched && !ageGetter.valid">This is required</p>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Year you were born</label>
+        <select
+          class="form-control"
+          name="year"
+          formControlName="year"
+        >
+          <option *ngFor="let year of years" [value]="year">
+            {{ year }}
+          </option>
+        </select>
+        <p *ngIf="year.touched && !year.valid">This is required</p>
+        <!-- <p>Year errors: {{ yearModel.errors | json }}</p> -->
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Favorite catergory</label>
+        <select
+          class="form-control"
+          name="categoryId"
+          formControlName="categoryId"
+        >
+          <option *ngFor="let category of categories$ | async"
+                  [value]="category.id">
+            {{ category.name }}
+          </option>
+        </select>
+        <!-- <p>Year errors: {{ yearModel.errors | json }}</p> -->
+      </div>
+
+    </div>
+
+    <div class="card-footer text-muted">
+      <button class="btn btn-primary" [disabled]="!ageForm.valid">
+        Verify
+      </button>
+
+      <!-- <p>Form value: {{ ageForm.value | json }}</p> -->
+    </div>
+  </form>
+</div>
