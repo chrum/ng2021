@@ -14,8 +14,14 @@
   <div class="row pt-5">
 
     <app-product *ngFor="let product of products | sort:'price':sortDirection"
-                 [data]="product"
-                 (addToCart)="addToCart($event)"></app-product>
+                 [data]="product">
+
+      <button (click)="addToCart(product)">
+        Add to cart
+      </button>
+
+
+    </app-product>
   </div>
 </div>
 <div>

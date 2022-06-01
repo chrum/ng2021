@@ -5,8 +5,6 @@
     <h5 class="card-title">{{ data.price | currency:'USD' }}</h5>
   </div>
   <div class="card-footer text-muted">
-    <button (click)="toCart()">
-      Add to cart
-    </button>
+    <ng-content></ng-content>
   </div>
 </div>

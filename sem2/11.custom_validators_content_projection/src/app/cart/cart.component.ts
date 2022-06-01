@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from '../cart.service';
 import {Location} from '@angular/common';
+import {Product} from "../definitions";
 
 @Component({
   selector: 'app-cart',
@@ -20,5 +21,9 @@ export class CartComponent implements OnInit {
 
   public back() {
     this._location.back();
+  }
+
+  public remove(product: Product) {
+    this._cart.remove(product);
   }
 }

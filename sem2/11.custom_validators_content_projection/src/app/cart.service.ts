@@ -20,4 +20,12 @@ export class CartService {
     this._data.push(item);
     this._items$.next([...this._data]);
   }
+
+  public remove(item: Product) {
+    this._data = this._data.filter((p) => {
+      return p !== item;
+    })
+
+    this._items$.next(this._data);
+  }
 }
